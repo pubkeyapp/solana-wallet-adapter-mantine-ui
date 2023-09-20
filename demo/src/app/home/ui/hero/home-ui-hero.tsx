@@ -1,5 +1,4 @@
-import { Button, Container, Text, Title } from '@mantine/core'
-import { WalletMultiButton } from '@pubkeyapp/wallet-adapter-mantine-ui'
+import { Anchor, Container, Text, Title } from '@mantine/core'
 import classes from './home-ui-hero.module.css'
 
 export function HomeUiHero() {
@@ -40,17 +39,13 @@ export function HomeUiHero() {
 
         <Container p={0} size={600}>
           <Text size="lg" c="dimmed" className={classes.description}>
-            Easily integrate Solana wallets into your Mantine app with this simple, easy-to-use adapter with a familiar
-            UI and API.
+            Easily integrate Solana wallets into your{' '}
+            <Anchor href="https://mantine.dev" target="_blank" rel="noopener noreferrer">
+              Mantine
+            </Anchor>{' '}
+            app with this simple, easy-to-use adapter with a familiar UI and API.
           </Text>
         </Container>
-
-        <div className={classes.controls}>
-          <WalletMultiButton className={classes.control} size="lg" variant="default" color="gray" />
-          <Button className={classes.control} size="lg">
-            Get started
-          </Button>
-        </div>
       </div>
     </Container>
   )

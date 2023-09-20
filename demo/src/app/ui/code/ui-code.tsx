@@ -1,9 +1,13 @@
 import { CodeHighlightTabs, CodeHighlightTabsCode } from '@mantine/code-highlight'
-import { IconBrandCss3, IconBrandTypescript, IconPackage } from '@tabler/icons-react'
+import { DEFAULT_THEME } from '@mantine/core'
+import { IconBrandCss3, IconBrandReact, IconBrandTypescript, IconPackage } from '@tabler/icons-react'
 
 function getFileIcon(fileName: string) {
-  if (fileName.endsWith('.ts') || fileName.endsWith('.tsx')) {
+  if (fileName.endsWith('.ts')) {
     return <IconBrandTypescript size={18} />
+  }
+  if (fileName.endsWith('.tsx')) {
+    return <IconBrandReact color={DEFAULT_THEME.colors.blue[4]} size={18} />
   }
 
   if (fileName.endsWith('.css')) {
@@ -11,7 +15,7 @@ function getFileIcon(fileName: string) {
   }
 
   if (fileName === 'yarn') {
-    return <IconPackage size={18} />
+    return <IconPackage color={DEFAULT_THEME.colors.blue[4]} size={18} />
   }
   return null
 }

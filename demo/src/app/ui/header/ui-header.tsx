@@ -1,6 +1,7 @@
 import { Container, Group, Text } from '@mantine/core'
-import { IconBrandDiscord, IconBrandGithub, IconRocket } from '@tabler/icons-react'
+import { IconBrandDiscord, IconBrandGithub } from '@tabler/icons-react'
 import { UiIconLink, UiIconLinkProps } from '../icon-link/ui-icon-link'
+import { UiLogo } from '../logo/ui-logo'
 import { UiThemeToggle } from '../theme-toggle/ui-theme-toggle'
 import classes from './ui-header.module.css'
 
@@ -13,11 +14,9 @@ export function UiHeader() {
   return (
     <header className={classes.header}>
       <Container size="xl" className={classes.inner}>
-        <Group>
-          <IconRocket size={28} />
-          <Text size="lg" fw={700} className={classes.title}>
-            Solana Wallet Adapter for Mantine
-          </Text>
+        <Group gap="xs" align="center">
+          <UiLogo height={32} />
+          <Text fw={500}>Wallet Adapter for Mantine</Text>
         </Group>
         <Group gap={5} visibleFrom="xs">
           {icons.map((icon) => (
