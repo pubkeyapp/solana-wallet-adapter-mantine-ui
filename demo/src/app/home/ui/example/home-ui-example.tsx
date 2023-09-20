@@ -1,4 +1,4 @@
-import { Anchor, Box, Code, Container, Group, Stack, Table, Text, Title } from '@mantine/core'
+import { Anchor, Code, Container, Group, Stack, Table, Text, Title } from '@mantine/core'
 import { WalletDisconnectButton, WalletModalButton, WalletMultiButton } from '@pubkeyapp/wallet-adapter-mantine-ui'
 import { ReactNode } from 'react'
 import { UiCode } from '../../../ui'
