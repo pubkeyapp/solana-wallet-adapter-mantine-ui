@@ -1,4 +1,4 @@
-import { Anchor, Box, Code, Container, Stack, Table, Text, Title } from '@mantine/core'
+import { Anchor, Box, Code, Container, Group, Stack, Table, Text, Title } from '@mantine/core'
 import { WalletDisconnectButton, WalletModalButton, WalletMultiButton } from '@pubkeyapp/wallet-adapter-mantine-ui'
 import { ReactNode } from 'react'
 import { UiCode } from '../../../ui'
@@ -116,9 +116,11 @@ export function HomeUiExample() {
 
 function DemoCard({ children, title }: { children: ReactNode; title: string }) {
   return (
-    <Box p="md" style={{ textAlign: 'center' }}>
-      <Code style={{ fontSize: 16 }}>{title}</Code>
+    <Stack p="md" style={{ textAlign: 'center' }} gap="md" align="center">
+      <Group align="center">
+        <Code style={{ fontSize: 16 }}>{title}</Code>
+      </Group>
       {children}
-    </Box>
+    </Stack>
   )
 }
