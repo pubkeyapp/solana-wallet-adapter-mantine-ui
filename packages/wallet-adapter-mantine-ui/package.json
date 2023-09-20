@@ -15,7 +15,7 @@
     "react": "^18.2.0"
   },
   "type": "commonjs",
-  "main": "./index.cjs",
-  "module": "./index.js",
+  "main": "./index.esm.js",
+  "module": "./index.esm.js",
   "license": "MIT"
 }
