@@ -28,13 +28,13 @@ export function HomeUiExample() {
       mantineVersion: '7.x.x',
       mantineUrl: 'https://mantine.dev/',
       packageVersion: '2.x.x',
-      packageUrl: 'https://npm.im/@pubkeyapp/wallet-adapter-mantine-ui',
+      packageUrl: 'https://www.npmjs.com/package/@pubkeyapp/wallet-adapter-mantine-ui',
     },
     {
       mantineVersion: '6.x.x',
       mantineUrl: 'https://v6.mantine.dev/',
       packageVersion: '1.3.3',
-      packageUrl: 'https://npm.im/@pubkeyapp/wallet-adapter-mantine-ui/v/1.3.3',
+      packageUrl: 'https://www.npmjs.com/package/@pubkeyapp/wallet-adapter-mantine-ui/v/1.3.3',
     },
   ]
   return (
