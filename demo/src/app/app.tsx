@@ -1,18 +1,12 @@
-import { Button } from '@mantine/core'
-import styles from './app.module.css'
-import '@mantine/core/styles.css'
-import { UiThemeToggle } from './ui/theme-toggle/ui-theme-toggle'
-import { UiThemeProvider } from './ui/theme/ui-theme-provider'
+import './ui/theme/styles'
+import { AppRoutes } from './app-routes'
+import { UiHeader, UiThemeProvider } from './ui'
 
 export function App() {
   return (
     <UiThemeProvider>
-      <div className={styles.app}>
-        <div>Hello World</div>
-        <UiThemeToggle />
-      </div>
-
-      <Button>THIS IS A BUTTON</Button>
+      <UiHeader />
+      <AppRoutes />
     </UiThemeProvider>
   )
 }

@@ -1,10 +1,7 @@
-import { createTheme, MantineProvider, DEFAULT_THEME, mergeMantineTheme } from '@mantine/core'
+import { createTheme, DEFAULT_THEME, MantineProvider, mergeMantineTheme } from '@mantine/core'
 
 import { createContext, ReactNode, useContext } from 'react'
-
-export interface UiThemeProviderContext {
-  name: string
-}
+import { UiColorSchemeProvider } from './ui-color-scheme-provider'
 
 const themeOverride = createTheme({
   colors: {
@@ -14,21 +11,18 @@ const themeOverride = createTheme({
 })
 export const theme = mergeMantineTheme(DEFAULT_THEME, themeOverride)
 
-const UiThemeContext = createContext<UiThemeProviderContext>({} as UiThemeProviderContext)
+const Context = createContext({})
 
 export function UiThemeProvider({ children }: { children: ReactNode }) {
-  const value: UiThemeProviderContext = {
-    name: 'UiTheme',
-  }
   return (
-    <UiThemeContext.Provider value={value}>
+    <Context.Provider value={{}}>
       <MantineProvider defaultColorScheme="auto" theme={theme}>
-        {children}
+        <UiColorSchemeProvider>{children}</UiColorSchemeProvider>
       </MantineProvider>
-    </UiThemeContext.Provider>
+    </Context.Provider>
   )
 }
 
 export function useUiTheme() {
-  return useContext(UiThemeContext)
+  return useContext(Context)
 }
