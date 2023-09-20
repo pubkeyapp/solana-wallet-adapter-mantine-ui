@@ -1,6 +1,6 @@
 {
   "name": "@solana-wallet-adapter-mantine-ui/source",
-  "version": "2.0.1-beta.1",
+  "version": "2.0.1",
   "license": "MIT",
   "scripts": {
     "dev:demo": "nx serve demo"
