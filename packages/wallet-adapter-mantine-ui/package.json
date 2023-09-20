@@ -2,6 +2,19 @@
   "name": "@pubkeyapp/wallet-adapter-mantine-ui",
   "version": "0.0.1",
   "dependencies": {},
+  "homepage": "https://solana-wallet-adapter-mantine-ui.pages.dev/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pubkeyapp/solana-wallet-adapter-mantine-ui.git"
+  },
+  "peerDependencies": {
+    "@mantine/core": "^7.0.0",
+    "@solana/wallet-adapter-base": "^0.9.23",
+    "@solana/wallet-adapter-react": "^0.15.35",
+    "@tabler/icons-react": "^2.34.0",
+    "core-js": "^3.32.2",
+    "react": "^18.2.0"
+  },
   "type": "commonjs",
   "main": "./index.cjs",
   "module": "./index.js"
