@@ -2,7 +2,7 @@ import { Anchor, Box, Code, Container, Stack, Table, Text, Title } from '@mantin
 import { WalletDisconnectButton, WalletModalButton, WalletMultiButton } from '@pubkeyapp/wallet-adapter-mantine-ui'
 import { ReactNode } from 'react'
 import { UiCode } from '../../../ui'
-import classes from '../hero/home-ui-hero.module.css'
+import classes from './home-ui-example.module.css'
 
 const demo = `
 import { WalletModalProvider, WalletMultiButton } from '@pubkeyapp/wallet-adapter-mantine-ui'
