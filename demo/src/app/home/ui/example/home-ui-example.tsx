@@ -9,11 +9,9 @@ import { clusterApiUrl } from '@solana/web3.js'
 export function App() {
   const endpoint = clusterApiUrl('devnet')
   return (
-    /* Add the ConnectionProvider and WalletProvider from '@solana/wallet-adapter-react' */
     <ConnectionProvider endpoint={endpoint}>
       <WalletProvider>
-        /* Add the WalletModalProvider and WalletMultiButton from '@pubkeyapp/wallet-adapter-mantine-ui' */
-        <WalletModalProvider radius="xl">
+        <WalletModalProvider>
           <WalletMultiButton />
         </WalletModalProvider>
       </WalletProvider>

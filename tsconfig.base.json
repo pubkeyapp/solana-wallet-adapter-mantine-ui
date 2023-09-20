@@ -14,7 +14,9 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@pubkeyapp/wallet-adapter-mantine-ui": ["packages/wallet-adapter-mantine-ui/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

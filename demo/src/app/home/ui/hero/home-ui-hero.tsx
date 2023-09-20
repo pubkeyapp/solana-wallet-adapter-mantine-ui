@@ -1,4 +1,5 @@
 import { Button, Container, Text, Title } from '@mantine/core'
+import { WalletMultiButton } from '@pubkeyapp/wallet-adapter-mantine-ui'
 import classes from './home-ui-hero.module.css'
 
 export function HomeUiHero() {
@@ -45,9 +46,7 @@ export function HomeUiHero() {
         </Container>
 
         <div className={classes.controls}>
-          <Button className={classes.control} size="lg" variant="default" color="gray">
-            See a demo
-          </Button>
+          <WalletMultiButton className={classes.control} size="lg" variant="default" color="gray" />
           <Button className={classes.control} size="lg">
             Get started
           </Button>
