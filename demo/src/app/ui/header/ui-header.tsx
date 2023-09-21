@@ -18,9 +18,11 @@ export function UiHeader() {
       <Container size="xl" className={classes.inner}>
         <Group gap="xs" align="center">
           <UiLogo height={32} />
-          <Text fw={500}>Wallet Adapter for Mantine</Text>
+          <Text visibleFrom="xs" fw={500}>
+            Wallet Adapter for Mantine
+          </Text>
         </Group>
-        <Group gap={5} visibleFrom="xs">
+        <Group gap={5}>
           {icons.map((icon) => (
             <UiIconLink key={icon.href} {...icon} {...iconProps} />
           ))}

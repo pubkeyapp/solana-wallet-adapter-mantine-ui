@@ -1,9 +1,17 @@
-import { createTheme, DEFAULT_THEME, MantineProvider, mergeMantineTheme } from '@mantine/core'
-
+import { Container, createTheme, DEFAULT_THEME, MantineProvider, mergeMantineTheme } from '@mantine/core'
+import cx from 'clsx'
 import { createContext, ReactNode, useContext } from 'react'
 import { UiColorSchemeProvider } from './ui-color-scheme-provider'
+import classes from './ui-theme-provider.module.css'
 
 const themeOverride = createTheme({
+  components: {
+    Container: Container.extend({
+      classNames: (_, { size }) => ({
+        root: cx({ [classes.responsiveContainer]: size === 'responsive' }),
+      }),
+    }),
+  },
   colors: {
     brand: DEFAULT_THEME.colors.blue,
   },

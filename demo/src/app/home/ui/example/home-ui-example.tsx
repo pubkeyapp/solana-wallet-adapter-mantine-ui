@@ -1,7 +1,7 @@
-import { Anchor, Code, Container, Group, Stack, Table, Text, Title } from '@mantine/core'
+import { Anchor, Box, Code, Group, Stack, Table, Text, Title } from '@mantine/core'
 import { WalletDisconnectButton, WalletModalButton, WalletMultiButton } from '@pubkeyapp/wallet-adapter-mantine-ui'
 import { ReactNode } from 'react'
-import { UiCode } from '../../../ui'
+import { UiCode, UiContainer } from '../../../ui'
 import classes from './home-ui-example.module.css'
 
 const demo = `
@@ -38,7 +38,7 @@ export function HomeUiExample() {
     },
   ]
   return (
-    <Container size="md">
+    <UiContainer>
       <Stack gap="lg">
         <Title className={classes.title}>Getting started</Title>
         <Stack gap="lg" mb="lg">
@@ -59,7 +59,7 @@ export function HomeUiExample() {
             }}
           />
         </Stack>
-        <Container p={0} size={600} mt="xl">
+        <Box p={0} mt="xl">
           <Title className={classes.title}>Versions</Title>
           <Stack gap="lg" mb="lg">
             <Text style={{ textAlign: 'center' }}>
@@ -82,7 +82,7 @@ export function HomeUiExample() {
                     </Table.Td>
                     <Table.Td>
                       <Anchor href={packageUrl} target="_blank" rel="noopener noreferrer">
-                        @pubkeyapp/wallet-adapter-mantine-ui@{packageVersion}
+                        {packageVersion}
                       </Anchor>
                     </Table.Td>
                   </Table.Tr>
@@ -90,7 +90,7 @@ export function HomeUiExample() {
               </Table.Tbody>
             </Table>
           </Stack>
-        </Container>
+        </Box>
         <Title className={classes.title}>Components</Title>
         <Stack gap="lg" mb="lg">
           <DemoCard title="<WalletMultiButton />">
@@ -110,7 +110,7 @@ export function HomeUiExample() {
           </DemoCard>
         </Stack>
       </Stack>
-    </Container>
+    </UiContainer>
   )
 }
 
