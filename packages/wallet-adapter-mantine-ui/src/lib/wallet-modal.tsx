@@ -1,6 +1,5 @@
 import { Box, Button, Collapse, Group, Stack, Text } from '@mantine/core'
-import type { WalletName } from '@solana/wallet-adapter-base'
-import { WalletReadyState } from '@solana/wallet-adapter-base'
+import { WalletName, WalletReadyState } from '@solana/wallet-adapter-base'
 import type { Wallet } from '@solana/wallet-adapter-react'
 import { useWallet } from '@solana/wallet-adapter-react'
 import { IconChevronDown, IconChevronUp } from '@tabler/icons-react'
