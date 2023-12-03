@@ -119,36 +119,36 @@ export function WalletModal(props: WalletModalProps) {
       ) : (
         <Box>
           <Box mx="xl">
-            <Text size="xl">You'll need a wallet on Solana to continue</Text>
+            <Text size="lg" ta="center">
+              You'll need a wallet on Solana to continue
+            </Text>
           </Box>
-          <Group justify="center" mt="xl">
+          <Group justify="center" my="xl">
             <WalletSVG />
           </Group>
-          <Stack mt="xl">
-            {collapsedWallets.length ? (
-              <>
-                <Button
-                  fullWidth
-                  variant="outline"
-                  onClick={handleCollapseClick}
-                  tabIndex={0}
-                  rightSection={expanded ? <IconChevronUp /> : <IconChevronDown />}
-                >
-                  {expanded ? 'Hide ' : 'Already have a wallet? View '}options
-                </Button>
-                <Collapse in={expanded}>
-                  {collapsedWallets.map((wallet) => (
-                    <Box key={wallet.adapter.name}>
-                      <WalletListItem
-                        wallet={wallet}
-                        handleClick={(event: MouseClickPayload) => handleWalletClick(event, wallet.adapter.name)}
-                      />
-                    </Box>
-                  ))}
-                </Collapse>
-              </>
-            ) : null}
-          </Stack>
+          {collapsedWallets.length ? (
+            <Stack mt="xl">
+              <Button
+                fullWidth
+                variant="outline"
+                onClick={handleCollapseClick}
+                tabIndex={0}
+                rightSection={expanded ? <IconChevronUp /> : <IconChevronDown />}
+              >
+                {expanded ? 'Hide ' : 'Already have a wallet? View '}options
+              </Button>
+              <Collapse in={expanded}>
+                {collapsedWallets.map((wallet) => (
+                  <Box key={wallet.adapter.name}>
+                    <WalletListItem
+                      wallet={wallet}
+                      handleClick={(event: MouseClickPayload) => handleWalletClick(event, wallet.adapter.name)}
+                    />
+                  </Box>
+                ))}
+              </Collapse>
+            </Stack>
+          ) : null}
         </Box>
       )}
     </Box>
