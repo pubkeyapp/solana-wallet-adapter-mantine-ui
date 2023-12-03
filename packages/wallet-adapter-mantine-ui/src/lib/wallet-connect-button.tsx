@@ -19,7 +19,7 @@ export function WalletConnectButton({ children, disabled, onClick, ...props }: W
 
   const content = useMemo(() => {
     if (children) return children
-    if (connecting) return 'Connecting ...'
+    if (connecting) return 'Connecting...'
     if (connected) return 'Connected'
     if (wallet) return 'Connect'
     return 'Connect Wallet'
