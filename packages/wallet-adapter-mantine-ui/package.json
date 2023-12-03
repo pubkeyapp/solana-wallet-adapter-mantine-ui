@@ -1,6 +1,6 @@
 {
-  "name": "@pubkeyapp/wallet-adapter-mantine-ui",
-  "version": "2.0.1",
+  "name": "@solana-wallet-adapter-mantine-ui/wallet-adapter-mantine-ui",
+  "version": "2.1.0",
   "dependencies": {},
   "homepage": "https://solana-wallet-adapter-mantine-ui.pages.dev/",
   "repository": {
