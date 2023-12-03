@@ -114,6 +114,13 @@ export function HomeUiExample() {
             </div>
           </DemoCard>
         </SimpleGrid>
+        <Group justify="center">
+          <WalletMultiButton className={classes.control} size="xs" />
+          <WalletMultiButton className={classes.control} size="sm" />
+          <WalletMultiButton className={classes.control} size="md" />
+          <WalletMultiButton className={classes.control} size="lg" />
+          <WalletMultiButton className={classes.control} size="xl" />
+        </Group>
       </UiStack>
     </UiContainer>
   )

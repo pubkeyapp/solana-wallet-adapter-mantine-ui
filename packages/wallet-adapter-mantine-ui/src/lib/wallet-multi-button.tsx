@@ -38,7 +38,7 @@ export function WalletMultiButton({ children, ...props }: WalletButtonProps) {
   return (
     <Menu withArrow offset={3}>
       <Menu.Target>
-        <Button leftSection={<WalletIcon wallet={wallet} />} {...props}>
+        <Button leftSection={<WalletIcon wallet={wallet} size={props.size} />} px="sm" {...props}>
           {content}
         </Button>
       </Menu.Target>

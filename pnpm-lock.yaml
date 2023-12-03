@@ -24,11 +24,8 @@ dependencies:
     specifier: ^7.2.2
     version: 7.2.2(@mantine/core@7.2.2)(@mantine/hooks@7.2.2)(react-dom@18.2.0)(react@18.2.0)
   '@pubkey-ui/core':
-    specifier: ^1.0.1
-    version: 1.0.1(@types/react@18.2.41)(dayjs@1.11.10)(react-dom@18.2.0)(react@18.2.0)
-  '@pubkeyapp/logo':
-    specifier: ^1.3.3
-    version: 1.3.3(@mantine/core@7.2.2)(core-js@3.33.3)(react@18.2.0)
+    specifier: ^1.0.2
+    version: 1.0.2(@types/react@18.2.41)(dayjs@1.11.10)(react-dom@18.2.0)(react@18.2.0)
   '@solana/buffer-layout':
     specifier: ^4.0.1
     version: 4.0.1
@@ -3194,8 +3191,8 @@ packages:
     resolution: {integrity: sha512-C16M+IYz0rgRhWZdCmK+h58JMv8vijAA61gmz2rspCSwKwzBebpdcsiUmwrtJRdphuY30i6BSLEOP8ppbNLyLg==}
     dev: true
 
-  /@pubkey-ui/core@1.0.1(@types/react@18.2.41)(dayjs@1.11.10)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-x4CyQ1Y1z5GKIkC4JL5Kdv75Ei1EjNBMTf1xXfaMWMeY/IZh0q+fivO4teMtDNUOki7nM/HreTA0ygraMlXTyg==}
+  /@pubkey-ui/core@1.0.2(@types/react@18.2.41)(dayjs@1.11.10)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-nla7Nh2xVyFGGkA3j9zqY98kJ+Z5cpZ3WpzhfogeyGSsH65qq1mZB7okK3ZkRT2nDqDP4wqTWA3nG65UNOGGjQ==}
     dependencies:
       '@mantine/core': 7.2.2(@mantine/hooks@7.2.2)(@types/react@18.2.41)(react-dom@18.2.0)(react@18.2.0)
       '@mantine/dates': 7.2.2(@mantine/core@7.2.2)(@mantine/hooks@7.2.2)(dayjs@1.11.10)(react-dom@18.2.0)(react@18.2.0)
@@ -3209,18 +3206,6 @@ packages:
       - dayjs
       - react
       - react-dom
-    dev: false
-
-  /@pubkeyapp/logo@1.3.3(@mantine/core@7.2.2)(core-js@3.33.3)(react@18.2.0):
-    resolution: {integrity: sha512-fXz86XAtGK6HT5XgmrAE26JK/ap7OjRDS7SPZVs9GomsqWaayKxTHKPBEMmldr6V2dIwW1LYJUWb+xB2Tvmq2w==}
-    peerDependencies:
-      '@mantine/core': '>=6.0.0'
-      core-js: '>=3.0.0'
-      react: '>=16.8.0'
-    dependencies:
-      '@mantine/core': 7.2.2(@mantine/hooks@7.2.2)(@types/react@18.2.41)(react-dom@18.2.0)(react@18.2.0)
-      core-js: 3.33.3
-      react: 18.2.0
     dev: false
 
   /@react-native-async-storage/async-storage@1.21.0(react-native@0.72.7):
@@ -6205,6 +6190,7 @@ packages:
   /core-js@3.33.3:
     resolution: {integrity: sha512-lo0kOocUlLKmm6kv/FswQL8zbkH7mVsLJ/FULClOhv8WRVmKLVcs6XPNQAzstfeJTCHMyButEwG+z1kHxHoDZw==}
     requiresBuild: true
+    dev: true
 
   /core-util-is@1.0.3:
     resolution: {integrity: sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ==}

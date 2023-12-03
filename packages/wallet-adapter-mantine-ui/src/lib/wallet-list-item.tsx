@@ -34,7 +34,7 @@ export function WalletListItem({ handleClick, tabIndex, wallet }: WalletListItem
   return (
     <NavLink
       component="button"
-      style={{ height: 48, borderRadius: 50 }}
+      style={{ height: 48, borderRadius: 8 }}
       label={<Text size="lg">{wallet.adapter.name}</Text>}
       leftSection={<WalletIcon wallet={wallet} />}
       rightSection={wallet.readyState === WalletReadyState.Installed && <span>Detected</span>}

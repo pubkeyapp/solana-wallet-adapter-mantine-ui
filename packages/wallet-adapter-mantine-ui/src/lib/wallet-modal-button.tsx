@@ -16,7 +16,7 @@ export function WalletModalButton({ children = 'Select Wallet', onClick, ...prop
   )
 
   return (
-    <Button onClick={handleClick} {...props}>
+    <Button onClick={handleClick} px="sm" {...props}>
       {children}
     </Button>
   )

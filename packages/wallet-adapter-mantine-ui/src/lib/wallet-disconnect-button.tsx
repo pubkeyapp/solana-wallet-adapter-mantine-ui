@@ -27,8 +27,9 @@ export function WalletDisconnectButton({ children, disabled, onClick, ...props }
   return (
     <Button
       disabled={disabled || !wallet}
-      leftSection={wallet ? <WalletIcon wallet={wallet} /> : undefined}
+      leftSection={wallet ? <WalletIcon wallet={wallet} size={props.size} /> : undefined}
       onClick={handleClick}
+      px="sm"
       {...props}
     >
       {content}
