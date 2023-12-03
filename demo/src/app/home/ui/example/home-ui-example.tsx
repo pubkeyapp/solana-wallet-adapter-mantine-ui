@@ -1,7 +1,8 @@
-import { Anchor, Box, Code, Group, Stack, Table, Text, Title } from '@mantine/core'
+import { Anchor, Box, Code, Group, SimpleGrid, Stack, Table, Text, Title } from '@mantine/core'
+import { UiContainer, UiStack } from '@pubkey-ui/core'
 import { WalletDisconnectButton, WalletModalButton, WalletMultiButton } from '@pubkeyapp/wallet-adapter-mantine-ui'
 import { ReactNode } from 'react'
-import { UiCode, UiContainer } from '../../../ui'
+import { UiCode } from '../../../ui/code/ui-code'
 import classes from './home-ui-example.module.css'
 
 const demo = `
@@ -37,19 +38,18 @@ export function HomeUiExample() {
       packageUrl: 'https://www.npmjs.com/package/@pubkeyapp/wallet-adapter-mantine-ui/v/1.3.3',
     },
   ]
+  const deps = '@pubkeyapp/wallet-adapter-mantine-ui @solana/wallet-adapter-react @solana/web3.js'
   return (
-    <UiContainer>
-      <Stack gap="lg">
+    <UiContainer fluid py={0}>
+      <UiStack>
         <Title className={classes.title}>Getting started</Title>
-        <Stack gap="lg" mb="lg">
+        <UiStack>
           <Text>Install dependencies:</Text>
-          <UiCode
-            code={{
-              fileName: 'yarn',
-              code: `yarn add @pubkeyapp/wallet-adapter-mantine-ui @solana/wallet-adapter-react @solana/web3.js`,
-              language: 'shell',
-            }}
-          />
+          <UiStack>
+            <UiCode code={{ fileName: 'npm', code: `npm install ${deps}`, language: 'shell' }} />
+            <UiCode code={{ fileName: 'pnpm', code: `pnpm add ${deps}`, language: 'shell' }} />
+            <UiCode code={{ fileName: 'yarn', code: `yarn add ${deps}`, language: 'shell' }} />
+          </UiStack>
           <Text>Configure providers and components:</Text>
           <UiCode
             code={{
@@ -58,7 +58,7 @@ export function HomeUiExample() {
               language: 'tsx',
             }}
           />
-        </Stack>
+        </UiStack>
         <Box p={0} mt="xl">
           <Title className={classes.title}>Versions</Title>
           <Stack gap="lg" mb="lg">
@@ -92,7 +92,12 @@ export function HomeUiExample() {
           </Stack>
         </Box>
         <Title className={classes.title}>Components</Title>
-        <Stack gap="lg" mb="lg">
+        <SimpleGrid
+          cols={{
+            base: 1,
+            md: 3,
+          }}
+        >
           <DemoCard title="<WalletMultiButton />">
             <div className={classes.controls}>
               <WalletMultiButton className={classes.control} size="lg" />
@@ -108,8 +113,8 @@ export function HomeUiExample() {
               <WalletModalButton className={classes.control} size="lg" />
             </div>
           </DemoCard>
-        </Stack>
-      </Stack>
+        </SimpleGrid>
+      </UiStack>
     </UiContainer>
   )
 }
