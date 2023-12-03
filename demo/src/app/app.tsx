@@ -1,13 +1,10 @@
-import { UiLayout, UiThemeProvider } from '@pubkey-ui/core'
+import { AppLayout } from './ui/app-layout'
 import { AppRoutes } from './app-routes'
-import { UiAppHeader } from './ui/header/ui-app-header'
 
 export function App() {
   return (
-    <UiThemeProvider>
-      <UiLayout header={<UiAppHeader />}>
-        <AppRoutes />
-      </UiLayout>
-    </UiThemeProvider>
+    <AppLayout>
+      <AppRoutes />
+    </AppLayout>
   )
 }

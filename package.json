@@ -13,7 +13,7 @@
     "@mantine/form": "^7.2.2",
     "@mantine/hooks": "^7.2.2",
     "@mantine/modals": "^7.2.2",
-    "@pubkey-ui/core": "^1.0.2",
+    "@pubkey-ui/core": "^1.0.3",
     "@solana/buffer-layout": "^4.0.1",
     "@solana/wallet-adapter-base": "^0.9.23",
     "@solana/wallet-adapter-react": "^0.15.35",

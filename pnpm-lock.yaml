@@ -24,8 +24,8 @@ dependencies:
     specifier: ^7.2.2
     version: 7.2.2(@mantine/core@7.2.2)(@mantine/hooks@7.2.2)(react-dom@18.2.0)(react@18.2.0)
   '@pubkey-ui/core':
-    specifier: ^1.0.2
-    version: 1.0.2(@types/react@18.2.41)(dayjs@1.11.10)(react-dom@18.2.0)(react@18.2.0)
+    specifier: ^1.0.3
+    version: 1.0.3(@types/react@18.2.41)(dayjs@1.11.10)(react-dom@18.2.0)(react@18.2.0)
   '@solana/buffer-layout':
     specifier: ^4.0.1
     version: 4.0.1
@@ -3191,8 +3191,8 @@ packages:
     resolution: {integrity: sha512-C16M+IYz0rgRhWZdCmK+h58JMv8vijAA61gmz2rspCSwKwzBebpdcsiUmwrtJRdphuY30i6BSLEOP8ppbNLyLg==}
     dev: true
 
-  /@pubkey-ui/core@1.0.2(@types/react@18.2.41)(dayjs@1.11.10)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-nla7Nh2xVyFGGkA3j9zqY98kJ+Z5cpZ3WpzhfogeyGSsH65qq1mZB7okK3ZkRT2nDqDP4wqTWA3nG65UNOGGjQ==}
+  /@pubkey-ui/core@1.0.3(@types/react@18.2.41)(dayjs@1.11.10)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-0Q4lFJRX4aNnGv2ZkVhV+FrDdaf4kDsrJSwIGoDZc6TDbSK2M5seXc5JtF+2iFqwhBjcVxfqcAjv38vDpEyPtA==}
     dependencies:
       '@mantine/core': 7.2.2(@mantine/hooks@7.2.2)(@types/react@18.2.41)(react-dom@18.2.0)(react@18.2.0)
       '@mantine/dates': 7.2.2(@mantine/core@7.2.2)(@mantine/hooks@7.2.2)(dayjs@1.11.10)(react-dom@18.2.0)(react@18.2.0)

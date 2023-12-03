@@ -2,7 +2,7 @@ import { Anchor, Box, Code, Group, SimpleGrid, Stack, Table, Text, Title } from 
 import { UiContainer, UiStack } from '@pubkey-ui/core'
 import { WalletDisconnectButton, WalletModalButton, WalletMultiButton } from '@pubkeyapp/wallet-adapter-mantine-ui'
 import { ReactNode } from 'react'
-import { UiCode } from '../../../ui/code/ui-code'
+import { UiCode } from '../../../ui/app-code'
 import classes from './home-ui-example.module.css'
 
 const demo = `
