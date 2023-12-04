@@ -1,6 +1,11 @@
 import { Anchor, Box, Code, Group, SimpleGrid, Stack, Table, Text, Title } from '@mantine/core'
 import { UiContainer, UiStack } from '@pubkey-ui/core'
-import { WalletDisconnectButton, WalletModalButton, WalletMultiButton } from '@pubkeyapp/wallet-adapter-mantine-ui'
+import {
+  WalletDisconnectButton,
+  WalletModalButton,
+  WalletMultiButton,
+  WalletMultiIcon,
+} from '@pubkeyapp/wallet-adapter-mantine-ui'
 import { ReactNode } from 'react'
 import { UiCode } from '../../../ui/app-code'
 import classes from './home-ui-example.module.css'
@@ -114,13 +119,24 @@ export function HomeUiExample() {
             </div>
           </DemoCard>
         </SimpleGrid>
-        <Group justify="center">
-          <WalletMultiButton className={classes.control} size="xs" />
-          <WalletMultiButton className={classes.control} size="sm" />
-          <WalletMultiButton className={classes.control} size="md" />
-          <WalletMultiButton className={classes.control} size="lg" />
-          <WalletMultiButton className={classes.control} size="xl" />
-        </Group>
+        <DemoCard title="<WalletMultiButton size='' />">
+          <Group justify="center">
+            <WalletMultiButton className={classes.control} size="xs" />
+            <WalletMultiButton className={classes.control} size="sm" />
+            <WalletMultiButton className={classes.control} size="md" />
+            <WalletMultiButton className={classes.control} size="lg" />
+            <WalletMultiButton className={classes.control} size="xl" />
+          </Group>
+        </DemoCard>
+        <DemoCard title="<WalletMultiIcon size='' />">
+          <Group justify="center">
+            <WalletMultiIcon className={classes.control} size="xs" />
+            <WalletMultiIcon className={classes.control} size="sm" />
+            <WalletMultiIcon className={classes.control} size="md" />
+            <WalletMultiIcon className={classes.control} size="lg" />
+            <WalletMultiIcon className={classes.control} size="xl" />
+          </Group>
+        </DemoCard>
       </UiStack>
     </UiContainer>
   )

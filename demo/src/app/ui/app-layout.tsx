@@ -2,12 +2,12 @@ import { UiHeader, UiLayout, UiThemeProvider } from '@pubkey-ui/core'
 import '@pubkey-ui/core/index.esm.css'
 import { IconBrandDiscord, IconBrandGithub, IconBrandNpm } from '@tabler/icons-react'
 import { ReactNode } from 'react'
-import { ThemeLink } from '../app-routes'
+import { Link } from 'react-router-dom'
 import { AppHeaderLinks } from './app-header-links'
 
 export function AppLayout({ children }: { children: ReactNode }) {
   return (
-    <UiThemeProvider link={ThemeLink}>
+    <UiThemeProvider link={({ children, ...props }) => <Link {...props}>{children}</Link>}>
       <UiLayout
         header={
           <UiHeader

@@ -1,5 +1,5 @@
-import { UiNotFound, UiThemeLink } from '@pubkey-ui/core'
-import { Link, useRoutes } from 'react-router-dom'
+import { UiNotFound } from '@pubkey-ui/core'
+import { useRoutes } from 'react-router-dom'
 import { HomeRoutes } from './home/feature'
 
 export function AppRoutes() {
@@ -9,5 +9,3 @@ export function AppRoutes() {
     { path: '*', element: <UiNotFound /> },
   ])
 }
-
-export const ThemeLink: UiThemeLink = ({ children, ...props }) => <Link {...props}>{children}</Link>

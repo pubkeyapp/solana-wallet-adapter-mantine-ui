@@ -14,7 +14,7 @@ export function WalletIcon({ wallet, ...props }: WalletIconProps) {
   ) : null
 }
 
-function convertSize(size?: ButtonProps['size']): number {
+export function convertSize(size?: ButtonProps['size']): number {
   switch (size) {
     case 'xs':
       return 16
