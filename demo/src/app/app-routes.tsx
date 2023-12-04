@@ -1,11 +1,10 @@
 import { UiNotFound } from '@pubkey-ui/core'
 import { useRoutes } from 'react-router-dom'
-import { HomeRoutes } from './home/feature'
+import { DemoRoutes } from './demo/feature'
 
 export function AppRoutes() {
   return useRoutes([
-    //
-    { index: true, element: <HomeRoutes /> },
-    { path: '*', element: <UiNotFound /> },
+    { index: true, element: <DemoRoutes /> },
+    { path: '/*', element: <UiNotFound /> },
   ])
 }

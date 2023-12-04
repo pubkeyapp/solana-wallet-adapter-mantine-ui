@@ -1,29 +1,26 @@
 import { Container, Stack } from '@mantine/core'
 import { WalletModalProvider } from '@pubkeyapp/wallet-adapter-mantine-ui'
-import { BackpackWalletAdapter } from '@solana/wallet-adapter-backpack'
 import { GlowWalletAdapter } from '@solana/wallet-adapter-glow'
 import { PhantomWalletAdapter } from '@solana/wallet-adapter-phantom'
-import { SolflareWalletAdapter } from '@solana/wallet-adapter-solflare'
 import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react'
+import { SolflareWalletAdapter } from '@solana/wallet-adapter-solflare'
 import { clusterApiUrl } from '@solana/web3.js'
-import { HomeUiExample, HomeUiHero } from '../ui'
+import { useState } from 'react'
+import { DemoUi, HomeUiHero } from '../ui'
 
-export function HomeFeature() {
+export function DemoFeature() {
+  const [autoConnect, setAutoConnect] = useState(true)
   return (
     <Container size="xl">
       <ConnectionProvider endpoint={clusterApiUrl('devnet')}>
         <WalletProvider
-          wallets={[
-            new BackpackWalletAdapter(),
-            new GlowWalletAdapter(),
-            new PhantomWalletAdapter(),
-            new SolflareWalletAdapter(),
-          ]}
+          autoConnect={autoConnect}
+          wallets={[new GlowWalletAdapter(), new PhantomWalletAdapter(), new SolflareWalletAdapter()]}
         >
           <WalletModalProvider>
             <Stack gap="xl">
               <HomeUiHero />
-              <HomeUiExample />
+              <DemoUi autoConnect={autoConnect} setAutoConnect={setAutoConnect} />
             </Stack>
           </WalletModalProvider>
         </WalletProvider>
