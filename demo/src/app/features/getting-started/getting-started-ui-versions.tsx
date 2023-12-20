@@ -1,6 +1,6 @@
 import { Anchor, Box, rem, Stack, Table, Text, Title } from '@mantine/core'
 
-export function VersionsUiTable() {
+export function GettingStartedUiVersions() {
   const versions = [
     {
       mantineVersion: '7.x.x',

@@ -1,4 +1,4 @@
-import { rem, Text, Title } from '@mantine/core'
+import { Text } from '@mantine/core'
 import { UiStack } from '@pubkey-ui/core'
 import { UiCode } from '../../ui'
 
@@ -24,7 +24,6 @@ export function GettingStartedUiInstallation() {
   const deps = '@pubkeyapp/wallet-adapter-mantine-ui @solana/wallet-adapter-react @solana/web3.js'
   return (
     <UiStack>
-      <Title style={{ textAlign: 'center', fontWeight: 800, fontSize: rem(40) }}>Getting Started</Title>
       <Text>Install dependencies:</Text>
       <UiStack>
         <UiCode code={{ fileName: 'npm', code: `npm install ${deps}`, language: 'shell' }} />

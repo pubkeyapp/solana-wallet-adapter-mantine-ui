@@ -7,8 +7,8 @@ export function AppRoutes() {
   return useRoutes([
     { index: true, element: <Navigate to="/getting-started" /> },
     { path: '/getting-started', element: <GettingStartedRoutes /> },
-    { path: '/examples', element: <DemoRoutes /> },
-    { path: '/versions', element: <VersionsRoutes /> },
+    { path: '/components', element: <DemoRoutes /> },
+    { path: '/verify', element: <VersionsRoutes /> },
     { path: '/*', element: <UiNotFound /> },
   ])
 }

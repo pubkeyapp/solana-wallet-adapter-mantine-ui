@@ -1,7 +1,7 @@
-import { UiHeader, UiLayout, UiStack, UiThemeProvider } from '@pubkey-ui/core'
+import { UiHeader, UiLayout, UiLoader, UiStack, UiThemeProvider } from '@pubkey-ui/core'
 import '@pubkey-ui/core/index.esm.css'
 import { IconBrandDiscord, IconBrandGithub, IconBrandNpm, IconBrandX } from '@tabler/icons-react'
-import { ReactNode } from 'react'
+import { ReactNode, Suspense } from 'react'
 import { Link } from 'react-router-dom'
 import { AppHeaderLinks } from './app-header-links'
 import { AppHero } from './app-hero'
@@ -14,8 +14,8 @@ export function AppLayout({ children }: { children: ReactNode }) {
           <UiHeader
             links={[
               { link: '/getting-started', label: 'Getting Started' },
-              { link: '/examples', label: 'Examples' },
-              { link: '/versions', label: 'Versions' },
+              { link: '/components', label: 'Components' },
+              { link: '/verify', label: 'Verify' },
             ]}
             profile={
               <AppHeaderLinks
@@ -32,7 +32,7 @@ export function AppLayout({ children }: { children: ReactNode }) {
       >
         <UiStack>
           <AppHero />
-          {children}
+          <Suspense fallback={<UiLoader />}>{children}</Suspense>
         </UiStack>
       </UiLayout>
     </UiThemeProvider>

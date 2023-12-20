@@ -1,5 +1,5 @@
-import { AppLayout } from './ui/app-layout'
 import { AppRoutes } from './app-routes'
+import { AppLayout } from './ui'
 
 export function App() {
   return (
