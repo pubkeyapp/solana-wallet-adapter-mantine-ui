@@ -8,7 +8,7 @@ import {
 } from '@pubkeyapp/wallet-adapter-mantine-ui'
 import { ReactNode } from 'react'
 
-export function DemoUiComponents({
+export function ExamplesUiComponents({
   autoConnect,
   setAutoConnect,
 }: {
@@ -25,33 +25,30 @@ export function DemoUiComponents({
           label="Set the WalletProvider's autoConnect prop"
         />
       </Group>
-      <SimpleGrid cols={{ base: 1, md: 3 }}>
-        <DemoCard title="<WalletMultiButton />">
-          <div>
-            <WalletMultiButton size="lg" />
-          </div>
+      <SimpleGrid cols={{ base: 1, md: 2 }}>
+        <DemoCard title="WalletMultiButton">
+          <WalletMultiButton size="lg" />
         </DemoCard>
-        <DemoCard title="<WalletDisconnectButton />">
-          <div>
-            <WalletDisconnectButton size="lg" />
-          </div>
+        <DemoCard title="WalletDisconnectButton">
+          <WalletDisconnectButton size="lg" />
         </DemoCard>
-        <DemoCard title="<WalletModalButton />">
-          <div>
-            <WalletModalButton size="lg" />
-          </div>
+        <DemoCard title="WalletModalButton">
+          <WalletModalButton size="lg" />
+        </DemoCard>
+        <DemoCard title="WalletMultiIcon">
+          <WalletMultiIcon size="lg" />
         </DemoCard>
       </SimpleGrid>
-      <DemoCard title="<WalletMultiButton size='' />">
-        <Group justify="center">
+      <DemoCard title="WalletMultiButton sizes">
+        <SimpleGrid cols={{ base: 1, md: 2 }}>
           <WalletMultiButton size="xs" />
           <WalletMultiButton size="sm" />
           <WalletMultiButton size="md" />
           <WalletMultiButton size="lg" />
           <WalletMultiButton size="xl" />
-        </Group>
+        </SimpleGrid>
       </DemoCard>
-      <DemoCard title="<WalletMultiIcon size='' />">
+      <DemoCard title="WalletMultiIcon sizes">
         <Group justify="center">
           <WalletMultiIcon size="xs" />
           <WalletMultiIcon size="sm" />

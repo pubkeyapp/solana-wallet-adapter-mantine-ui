@@ -1,6 +1,6 @@
 import { CodeHighlightTabs, CodeHighlightTabsCode } from '@mantine/code-highlight'
 import '@mantine/code-highlight/styles.css'
-import { DEFAULT_THEME } from '@mantine/core'
+import { DEFAULT_THEME, ScrollArea } from '@mantine/core'
 import { IconBrandCss3, IconBrandNpm, IconBrandReact, IconBrandTypescript } from '@tabler/icons-react'
 
 function getFileIcon(fileName: string) {
@@ -23,5 +23,9 @@ function getFileIcon(fileName: string) {
 
 export function UiCode({ code }: { code: CodeHighlightTabsCode | CodeHighlightTabsCode[] }) {
   code = Array.isArray(code) ? code : [code]
-  return <CodeHighlightTabs getFileIcon={getFileIcon} code={code} />
+  return (
+    <ScrollArea w={{ base: 450, sm: 700, md: 800 }}>
+      <CodeHighlightTabs getFileIcon={getFileIcon} code={code} />
+    </ScrollArea>
+  )
 }

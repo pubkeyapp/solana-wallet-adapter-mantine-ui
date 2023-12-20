@@ -1,7 +1,7 @@
 import { Anchor, Container, Text, Title } from '@mantine/core'
-import classes from './home-ui-hero.module.css'
+import classes from './app-hero.module.css'
 
-export function HomeUiHero() {
+export function AppHero() {
   return (
     <Container className={classes.wrapper} size="xl">
       <div className={classes.inner}>

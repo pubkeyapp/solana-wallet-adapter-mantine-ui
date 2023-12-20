@@ -1,5 +1,0 @@
-export * from './demo/demo-ui'
-export * from './hero/home-ui-hero'
-export { DemoUiVersion } from './demo/demo-ui-version'
-export { DemoUiInstallation } from './demo/demo-ui-installation'
-export { DemoUiComponents } from './demo/demo-ui-components'

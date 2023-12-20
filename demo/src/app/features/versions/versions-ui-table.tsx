@@ -1,6 +1,6 @@
 import { Anchor, Box, rem, Stack, Table, Text, Title } from '@mantine/core'
 
-export function DemoUiVersion() {
+export function VersionsUiTable() {
   const versions = [
     {
       mantineVersion: '7.x.x',
@@ -16,7 +16,7 @@ export function DemoUiVersion() {
     },
   ]
   return (
-    <Box mt="xl">
+    <Box>
       <Title style={{ textAlign: 'center', fontWeight: 800, fontSize: rem(40) }}>Versions</Title>
       <Stack gap="lg" mb="lg">
         <Text style={{ textAlign: 'center' }}>
