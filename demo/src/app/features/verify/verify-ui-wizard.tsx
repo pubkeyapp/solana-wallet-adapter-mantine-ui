@@ -1,11 +1,21 @@
 import { Badge, Button, Group, rem, Stack, Stepper, Switch } from '@mantine/core'
 import { toastError, toastSuccess, UiGroup, UiStack } from '@pubkey-ui/core'
-import { verifySignature } from '@pubkeyapp/solana-verify-wallet'
 import { WalletDisconnectButton, WalletMultiButton } from '@pubkeyapp/wallet-adapter-mantine-ui'
 import { useWallet } from '@solana/wallet-adapter-react'
 import { IconUsb, IconWallet } from '@tabler/icons-react'
 import { useCallback, useMemo, useState } from 'react'
 import { useCreateSignature } from './use-create-signature'
+
+import { sha256 } from '@noble/hashes/sha256'
+import { bytesToHex } from '@noble/hashes/utils'
+import { sign as ed25519 } from 'tweetnacl'
+
+function createChallenge({ message, publicKey }: { message: string; publicKey: string }) {
+  const createdAt = Date.now()
+  const challengeStr = JSON.stringify({ message, publicKey, createdAt })
+  const hashStr = sha256(challengeStr)
+  return bytesToHex(hashStr)
+}
 
 export function VerifyUiWizard() {
   const { connected, publicKey, signMessage, wallet } = useWallet()
@@ -13,7 +23,7 @@ export function VerifyUiWizard() {
   const [useLedger, setUseLedger] = useState<boolean>(false)
   const [showDescription, setShowDescription] = useState(true)
   const [orientation, setOrientation] = useState<'horizontal' | 'vertical'>('horizontal')
-  const challenge = 'Sign this message to verify your wallet'
+  const message = 'Sign this message to verify your wallet'
   const createSignature = useCreateSignature()
 
   const active = useMemo(() => {
@@ -32,25 +42,19 @@ export function VerifyUiWizard() {
   }, [wallet, connected, publicKey, signed])
 
   const sign = useCallback(async () => {
-    if (!challenge || signMessage === undefined || !publicKey) {
+    if (!message || signMessage === undefined || !publicKey) {
       return
     }
-    const signature = await createSignature({
-      challenge,
-      publicKey: publicKey.toString(),
-      useLedger,
-    }).catch((err) => toastError({ message: `${err}`, title: 'Error signing message' }))
 
-    if (!signature) {
+    const challenge = createChallenge({ publicKey: publicKey.toString(), message })
+
+    const { signatureHex, signatureBytes, messageBytes, walletBytes } = await createSignature(challenge, useLedger)
+
+    if (!signatureHex || !signatureBytes) {
       throw new Error('No signature')
     }
 
-    const verified = verifySignature({
-      challenge,
-      publicKey: publicKey.toString(),
-      signature,
-      useLedger,
-    })
+    const verified = ed25519.detached.verify(messageBytes, signatureBytes, walletBytes)
 
     if (!verified) {
       toastError({
@@ -64,9 +68,10 @@ export function VerifyUiWizard() {
       message: 'Successfully verified signature',
       title: 'Success signing message',
     })
-    setSigned(!!signature)
-    return signature
-  }, [challenge, createSignature, publicKey, signMessage, useLedger])
+
+    setSigned(!!signatureHex)
+    return signatureHex
+  }, [message, createSignature, publicKey, signMessage, useLedger])
 
   return (
     <Stack gap="lg">
