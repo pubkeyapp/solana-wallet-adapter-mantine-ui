@@ -6,14 +6,15 @@ import { IconUsb, IconWallet } from '@tabler/icons-react'
 import { useCallback, useMemo, useState } from 'react'
 import { useCreateSignature } from './use-create-signature'
 
-import { sha256 } from 'js-sha256'
+import { sha256 } from '@noble/hashes/sha256'
+import { bytesToHex } from '@noble/hashes/utils'
 import { sign as ed25519 } from 'tweetnacl'
 
 function createChallenge({ message, publicKey }: { message: string; publicKey: string }) {
   const createdAt = Date.now()
   const challengeStr = JSON.stringify({ message, publicKey, createdAt })
   const hashStr = sha256(challengeStr)
-  return hashStr
+  return bytesToHex(hashStr)
 }
 
 export function VerifyUiWizard() {

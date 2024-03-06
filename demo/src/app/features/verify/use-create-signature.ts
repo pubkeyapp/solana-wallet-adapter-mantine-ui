@@ -1,7 +1,7 @@
 import { useWallet, useAnchorWallet, useConnection } from '@solana/wallet-adapter-react'
 import { TransactionMessage, VersionedTransaction, PublicKey, TransactionInstruction } from '@solana/web3.js'
 
-import * as bs58 from 'bs58'
+import { encode } from 'bs58'
 import { Buffer } from 'buffer/'
 
 export function useCreateSignature() {
@@ -40,7 +40,7 @@ export function useCreateSignature() {
       return {
         messageBytes: signedTx.message.serialize(),
         signatureBytes: signedTx.signatures[0],
-        signatureHex: bs58.encode(signedTx.signatures[0]),
+        signatureHex: encode(signedTx.signatures[0]),
         walletBytes: wallet.publicKey.toBytes(),
       }
     } else {
@@ -53,7 +53,7 @@ export function useCreateSignature() {
 
       return {
         messageBytes,
-        signatureHex: bs58.encode(signature),
+        signatureHex: encode(signature),
         signatureBytes: signature,
         walletBytes: wallet.publicKey.toBytes(),
       }
