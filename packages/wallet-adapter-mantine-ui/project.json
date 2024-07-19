@@ -3,6 +3,7 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/wallet-adapter-mantine-ui/src",
   "projectType": "library",
+  "tags": [],
   "targets": {
     "build": {
       "executor": "@nx/rollup:rollup",
@@ -27,14 +28,7 @@
       }
     },
     "lint": {
-      "executor": "@nx/eslint:lint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": [
-          "packages/wallet-adapter-mantine-ui/**/*.ts",
-          "packages/wallet-adapter-mantine-ui/package.json"
-        ]
-      }
+      "executor": "@nx/eslint:lint"
     },
     "test": {
       "executor": "@nx/jest:jest",
@@ -43,6 +37,5 @@
         "jestConfig": "packages/wallet-adapter-mantine-ui/jest.config.ts"
       }
     }
-  },
-  "tags": []
+  }
 }

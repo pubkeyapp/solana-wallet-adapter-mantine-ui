@@ -5,6 +5,14 @@ import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin'
 import { NodeGlobalsPolyfillPlugin } from '@esbuild-plugins/node-globals-polyfill'
 
 export default defineConfig({
+  root: __dirname,
+  build: {
+    outDir: '../dist/demo',
+    reportCompressedSize: true,
+    commonjsOptions: {
+      transformMixedEsModules: true,
+    },
+  },
   cacheDir: '../node_modules/.vite/demo-vite',
   optimizeDeps: {
     esbuildOptions: {
@@ -33,6 +41,11 @@ export default defineConfig({
   // },
 
   test: {
+    reporters: ['default'],
+    coverage: {
+      reportsDirectory: '../coverage/demo',
+      provider: 'v8',
+    },
     globals: true,
     cache: {
       dir: '../node_modules/.vitest',
