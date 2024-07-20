@@ -2,6 +2,20 @@ import { Text } from '@mantine/core'
 import { UiStack } from '@pubkey-ui/core'
 import { UiCode } from '../../ui'
 
+const demoWrapper = `
+import { SolanaWalletProvider, WalletMultiButton } from '@pubkeyapp/wallet-adapter-mantine-ui'
+import { clusterApiUrl } from '@solana/web3.js'
+
+export function App() {
+  return (
+    <SolanaWalletProvider endpoint={clusterApiUrl('devnet')}>
+      {/* Your app here */}
+      <WalletMultiButton />
+    </SolanaWalletProvider>
+  )
+}
+`
+
 const demo = `
 import { WalletModalProvider, WalletMultiButton } from '@pubkeyapp/wallet-adapter-mantine-ui'
 import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react'
@@ -10,8 +24,9 @@ import { clusterApiUrl } from '@solana/web3.js'
 export function App() {
   return (
     <ConnectionProvider endpoint={clusterApiUrl('devnet')}>
-      <WalletProvider>
+      <WalletProvider wallets={[]}>
         <WalletModalProvider>
+          {/* Your app here */}
           <WalletMultiButton />
         </WalletModalProvider>
       </WalletProvider>
@@ -30,7 +45,15 @@ export function GettingStartedUiInstallation() {
         <UiCode code={{ fileName: 'pnpm', code: `pnpm add ${deps}`, language: 'shell' }} />
         <UiCode code={{ fileName: 'yarn', code: `yarn add ${deps}`, language: 'shell' }} />
       </UiStack>
-      <Text>Configure providers and components:</Text>
+      <Text>Use the provider wrapper:</Text>
+      <UiCode
+        code={{
+          fileName: 'app.tsx',
+          code: demoWrapper,
+          language: 'tsx',
+        }}
+      />
+      <Text>Or explicitly configure providers and components:</Text>
       <UiCode
         code={{
           fileName: 'app.tsx',

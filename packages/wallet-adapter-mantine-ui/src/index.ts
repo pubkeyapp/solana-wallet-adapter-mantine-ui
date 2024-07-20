@@ -1,3 +1,4 @@
+export * from './lib/solana-wallet-provider'
 export * from './lib/use-wallet-modal'
 export * from './lib/wallet-connect-button'
 export * from './lib/wallet-disconnect-button'

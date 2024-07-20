@@ -1,13 +1,15 @@
 import { UiStack } from '@pubkey-ui/core'
 import { useState } from 'react'
-import { AppAutoConnect, AppContainer, AppNavButtons, AppSolanaProviders, AppTitle } from '../../ui'
+import { AppAutoConnect, AppContainer, AppNavButtons, AppTitle } from '../../ui'
 import { VerifyUiWizard } from './verify-ui-wizard'
+import { clusterApiUrl } from '@solana/web3.js'
+import { SolanaWalletProvider } from '@pubkeyapp/wallet-adapter-mantine-ui'
 
 export default function GettingStartedRoutes() {
   const [autoConnect, setAutoConnect] = useState(false)
   return (
     <AppContainer>
-      <AppSolanaProviders autoConnect={autoConnect}>
+      <SolanaWalletProvider autoConnect={autoConnect} endpoint={clusterApiUrl('devnet')}>
         <UiStack gap="xl">
           <AppTitle
             title="Verify Wallet"
@@ -16,7 +18,7 @@ export default function GettingStartedRoutes() {
           <AppAutoConnect autoConnect={autoConnect} setAutoConnect={setAutoConnect} mx="auto" />
           <VerifyUiWizard />
         </UiStack>
-      </AppSolanaProviders>
+      </SolanaWalletProvider>
       <AppNavButtons left={{ label: 'Components', to: '/components' }} />
     </AppContainer>
   )
