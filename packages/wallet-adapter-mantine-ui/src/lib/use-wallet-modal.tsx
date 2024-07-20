@@ -6,7 +6,7 @@ export interface WalletModalContextState {
 }
 
 const DEFAULT_CONTEXT = {
-  setVisible(_open: boolean) {
+  setVisible() {
     console.error(constructMissingProviderErrorMessage('call', 'setVisible'))
   },
   visible: false,

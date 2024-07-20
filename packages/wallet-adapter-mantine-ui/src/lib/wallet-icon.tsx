@@ -1,4 +1,4 @@
-import { ButtonProps, Image, ImageProps, MantineSize } from '@mantine/core'
+import { ButtonProps, Image, ImageProps } from '@mantine/core'
 import type { Wallet } from '@solana/wallet-adapter-react'
 import React from 'react'
 

@@ -39,6 +39,7 @@ export function WalletListItem({ handleClick, tabIndex, wallet }: WalletListItem
       leftSection={<WalletIcon wallet={wallet} />}
       rightSection={wallet.readyState === WalletReadyState.Installed && <span>Detected</span>}
       variant="filled"
+      tabIndex={tabIndex}
       onClick={handleClick}
     />
   )

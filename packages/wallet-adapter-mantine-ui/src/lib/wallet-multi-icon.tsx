@@ -37,7 +37,9 @@ export function WalletMultiIcon(props: ActionIconProps & { iconSize?: number }) 
         return
       }
       if (!event.defaultPrevented) {
-        connect().catch(() => {})
+        connect().catch(() => {
+          void 0
+        })
       }
     },
     [connect, wallet, openModal],
