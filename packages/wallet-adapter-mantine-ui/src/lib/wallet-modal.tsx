@@ -2,11 +2,11 @@ import { Box, Button, Collapse, Group, Stack, Text } from '@mantine/core'
 import { WalletName, WalletReadyState } from '@solana/wallet-adapter-base'
 import type { Wallet } from '@solana/wallet-adapter-react'
 import { useWallet } from '@solana/wallet-adapter-react'
-import { IconChevronDown, IconChevronUp } from '@tabler/icons-react'
 import React, { useCallback, useMemo, useState } from 'react'
 import { MouseClickPayload } from './interfaces'
 
 import { useWalletModal } from './use-wallet-modal'
+import { IconChevronDown, IconChevronUp } from './wallet-icons'
 import { WalletListItem } from './wallet-list-item'
 import { WalletSVG } from './wallet-svg'
 

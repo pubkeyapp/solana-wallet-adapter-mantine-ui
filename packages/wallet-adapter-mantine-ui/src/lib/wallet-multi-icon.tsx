@@ -1,9 +1,9 @@
 import { ActionIcon, ActionIconProps, Image, MantineSize, Menu, Tooltip } from '@mantine/core'
 import { useWallet } from '@solana/wallet-adapter-react'
-import { IconCopy, IconCurrencySolana, IconLogout, IconSwitchHorizontal } from '@tabler/icons-react'
 import React, { MouseEventHandler, useCallback, useMemo, useState } from 'react'
 import { useWalletModal } from './use-wallet-modal'
 import { convertSize } from './wallet-icon'
+import { IconCopy, IconCurrencySolana, IconLogout, IconSwitchHorizontal } from './wallet-icons'
 
 export function WalletMultiIcon(props: ActionIconProps & { iconSize?: number }) {
   const size = props.size ?? 'lg'
@@ -76,7 +76,7 @@ export function WalletMultiIcon(props: ActionIconProps & { iconSize?: number }) 
         onClick={connectWallet}
         {...props}
       >
-        <IconCurrencySolana height={iconSize} width={iconSize} />
+        <IconCurrencySolana size={iconSize} />
       </ActionIcon>
     </Tooltip>
   )

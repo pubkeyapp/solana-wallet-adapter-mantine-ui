@@ -1,11 +1,11 @@
 import { Button, Menu } from '@mantine/core'
 import { useWallet } from '@solana/wallet-adapter-react'
-import { IconCopy, IconLogout, IconSwitchHorizontal } from '@tabler/icons-react'
 import React, { useCallback, useMemo, useState } from 'react'
 import { useWalletModal } from './use-wallet-modal'
 import type { WalletButtonProps } from './wallet-button-props'
 import { WalletConnectButton } from './wallet-connect-button'
 import { WalletIcon } from './wallet-icon'
+import { IconCopy, IconLogout, IconSwitchHorizontal } from './wallet-icons'
 import { WalletModalButton } from './wallet-modal-button'
 
 export function WalletMultiButton({ children, ...props }: WalletButtonProps) {
