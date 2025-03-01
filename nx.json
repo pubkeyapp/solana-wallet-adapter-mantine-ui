@@ -1,44 +1,15 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "npmScope": "pubkeyapp",
-  "workspaceLayout": {
-    "projectNameAndRootFormat": "as-provided"
-  },
+  "workspaceLayout": { "projectNameAndRootFormat": "as-provided" },
   "targetDefaults": {
-    "build": {
-      "dependsOn": [
-        "^build"
-      ],
-      "inputs": [
-        "production",
-        "^production"
-      ],
-      "cache": true
-    },
-    "@nx/vite:test": {
-      "inputs": [
-        "default",
-        "^production",
-        "{workspaceRoot}/jest.preset.js"
-      ],
-      "cache": true
-    },
+    "build": { "dependsOn": ["^build"], "inputs": ["production", "^production"], "cache": true },
+    "@nx/vite:test": { "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"], "cache": true },
     "@nx/jest:jest": {
-      "inputs": [
-        "default",
-        "^production",
-        "{workspaceRoot}/jest.preset.js"
-      ],
+      "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"],
       "cache": true,
-      "options": {
-        "passWithNoTests": true
-      },
-      "configurations": {
-        "ci": {
-          "ci": true,
-          "codeCoverage": true
-        }
-      }
+      "options": { "passWithNoTests": true },
+      "configurations": { "ci": { "ci": true, "codeCoverage": true } }
     },
     "@nx/eslint:lint": {
       "inputs": [
@@ -51,10 +22,7 @@
     }
   },
   "namedInputs": {
-    "default": [
-      "{projectRoot}/**/*",
-      "sharedGlobals"
-    ],
+    "default": ["{projectRoot}/**/*", "sharedGlobals"],
     "production": [
       "default",
       "!{projectRoot}/.eslintrc.json",
@@ -69,21 +37,11 @@
   },
   "generators": {
     "@nx/react": {
-      "application": {
-        "style": "css",
-        "linter": "eslint",
-        "bundler": "webpack",
-        "babel": true
-      },
-      "component": {
-        "style": "css"
-      },
-      "library": {
-        "style": "css",
-        "linter": "eslint"
-      }
+      "application": { "style": "css", "linter": "eslint", "bundler": "webpack", "babel": true },
+      "component": { "style": "css" },
+      "library": { "style": "css", "linter": "eslint" }
     }
   },
-  "nxCloudAccessToken": "Y2FjZjU4ZDctYTJjMy00ZmEyLWI1MTEtZjkyYzAyYjc0NTllfHJlYWQtd3JpdGU=",
+  "nxCloudAccessToken": "MWE3OTMwNGYtNzdlMC00OGFmLTk0ODgtYWY5MTE1OTBmYzU4fHJlYWQtd3JpdGU=",
   "useInferencePlugins": false
 }
